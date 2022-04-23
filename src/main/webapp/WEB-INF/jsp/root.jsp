@@ -6,11 +6,32 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-Hello world!
-</body>
-</html>
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>Form - user's menu</title>
+        </head>
+
+        <body>
+            <p>What would yuo like to do?</p>
+            <div>
+                <p>Regarding a book:</p>
+                <a href="ścieżka">find a book</a><br>
+                <a href="ścieżka">add a book</a><br>
+                <a href="ścieżka">delete a book</a><br>
+                <a href="ścieżka">check if the book is available</a>
+            </div>
+            <div>
+                <p>Regarding a reader:</p>
+                <a href="ścieżka">find a reader</a><br>
+                <a href="ścieżka">add a reader</a><br>
+                <a href="ścieżka">check reader's loans</a><br>
+                <a href="ścieżka">register reader's resignation</a><br>
+            </div>
+            <div>
+                <p>Regarding loans:</p>
+                <a href="ścieżka">register lending a book</a><br>
+                <a href="ścieżka">register returning a book</a>
+            </div>
+        </body>
+    </html>
