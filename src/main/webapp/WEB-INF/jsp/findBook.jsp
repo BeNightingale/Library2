@@ -9,7 +9,7 @@
         <form action="/book" method="get">
             <p>book id:</p>
             <label>
-                <input type="number" name ="id">
+                <input type="number" name="id">
             </label>
             <button type="submit">Submit</button>
         </form>

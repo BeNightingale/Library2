@@ -2,11 +2,11 @@ package com.wsb.library2;
 
 import com.wsb.library2.model.Book;
 import com.wsb.library2.service.BookService;
+import com.wsb.library2.service.ReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -14,6 +14,8 @@ public class ApplicationController {
 
     @Autowired
     private BookService bookService;
+    @Autowired
+    private ReaderService readerService;
 
     @GetMapping("/book")
     public String book(ModelMap model, @RequestParam(name = "id") Integer id)
@@ -27,9 +29,19 @@ public class ApplicationController {
         return "findBook";
     }
 
+    @GetMapping("/reader")
+    public String reader(ModelMap model, @RequestParam(name = "id") Integer id) {
+        model.addAttribute("reader", readerService.getReader(id).orElseThrow());
+        return "reader";
+    }
+
+    @GetMapping("/reader/find")
+    public String findReader() {
+        return "findReader";
+    }
+
     @GetMapping("/")
-    public String root()
-    {
+    public String root() {
         return "root";
     }
 
