@@ -1,6 +1,5 @@
 package com.wsb.library2;
 
-import com.wsb.library2.model.Book;
 import com.wsb.library2.service.BookService;
 import com.wsb.library2.service.ReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +17,7 @@ public class ApplicationController {
     private ReaderService readerService;
 
     @GetMapping("/book")
-    public String book(ModelMap model, @RequestParam(name = "id") Integer id)
-    {
+    public String book(ModelMap model, @RequestParam(name = "id") Integer id) {
         model.addAttribute("book", bookService.getBook(id).orElseThrow());
         return "book";
     }
@@ -40,9 +38,14 @@ public class ApplicationController {
         return "findReader";
     }
 
+    @GetMapping("/book/delete")
+    public String deleteBook(@RequestParam("id") Integer id) {
+        bookService.deleteBook(id);
+        return "deletedBook";
+    }
+
     @GetMapping("/")
     public String root() {
         return "root";
     }
-
 }

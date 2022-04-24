@@ -18,7 +18,6 @@
                 <p>Regarding a book:</p>
                 <a href="/book/find">find a book</a><br>
                 <a href="ścieżka">add a book</a><br>
-                <a href="ścieżka">delete a book</a><br>
                 <a href="ścieżka">check if the book is available</a>
             </div>
             <div>
