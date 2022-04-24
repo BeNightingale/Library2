@@ -22,7 +22,7 @@
         </tr>
     </table>
     <br>
-    <form action="/book/delete" method="get">
+    <form action="/book/delete" method="post">
         <label>
             <br>
             <input type="hidden" name="id" value=${book.bookId}>
