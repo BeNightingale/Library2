@@ -9,14 +9,14 @@
 <!DOCTYPE html>
     <html lang="en">
         <head>
-            <title>Form - user's menu</title>
+            <title>Library</title>
         </head>
 
         <body>
-            <p>What would yuo like to do?</p>
+            <p>What would you like to do?</p>
             <div>
                 <p>Regarding a book:</p>
-                <a href="ścieżka">find a book</a><br>
+                <a href="/book/find">find a book</a><br>
                 <a href="ścieżka">add a book</a><br>
                 <a href="ścieżka">delete a book</a><br>
                 <a href="ścieżka">check if the book is available</a>
