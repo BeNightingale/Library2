@@ -18,24 +18,24 @@ public class ApplicationController {
     private ReaderService readerService;
 
     @GetMapping("/book")
-    public String book(ModelMap model, @RequestParam(name = "id") Integer id) {
+    public String showBookById(ModelMap model, @RequestParam(name = "id") Integer id) {
         model.addAttribute("book", bookService.getBook(id).orElseThrow());
         return "book";
     }
 
     @GetMapping("/book/find")
-    public String findBook() {
+    public String findBookForm() {
         return "findBook";
     }
 
     @GetMapping("/reader")
-    public String reader(ModelMap model, @RequestParam(name = "id") Integer id) {
+    public String showReaderById(ModelMap model, @RequestParam(name = "id") Integer id) {
         model.addAttribute("reader", readerService.getReader(id).orElseThrow());
         return "reader";
     }
 
     @GetMapping("/reader/find")
-    public String findReader() {
+    public String findReaderForm() {
         return "findReader";
     }
 
