@@ -45,6 +45,13 @@ public class ApplicationController {
         return "findReader";
     }
 
+    @GetMapping("/reader/find/name")
+    public  String findReadersByFullName(ModelMap model, @RequestParam(name = "firstName") String firstName,
+                                         @RequestParam(name = "lastName") String lastName) {
+        model.addAttribute("readers", readerService.findReadersByFullName(firstName, lastName));
+        return "readerList";
+    }
+
     @PostMapping("/book/delete")
     public String deleteBook(@RequestParam("id") Integer id) {
         bookService.deleteBook(id);

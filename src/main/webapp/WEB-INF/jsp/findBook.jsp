@@ -3,18 +3,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Form - getting a book by bookId</title>
+        <title>Form - getting a book</title>
     </head>
     <body>
         <form action="/book" method="get">
-            <p>book id:</p>
+            <p>Search by book id:</p>
             <label>
                 <input type="number" name="id">
             </label>
             <button type="submit">Submit</button>
         </form>
         <form action="/book/find/title" method="get">
-            <p>book title:</p>
+            <p>Search by book title:</p>
             <label>
                 <input type="text" name="title">
             </label>
