@@ -28,6 +28,12 @@ public class ApplicationController {
         return "findBook";
     }
 
+    @GetMapping("/book/find/title")
+    public String findBookByTitle(ModelMap model, @RequestParam(name = "title") String title) {
+        model.addAttribute("books", bookService.findBooksByTitle(title));
+        return "bookList";
+    }
+
     @GetMapping("/reader")
     public String showReaderById(ModelMap model, @RequestParam(name = "id") Integer id) {
         model.addAttribute("reader", readerService.getReader(id).orElseThrow());

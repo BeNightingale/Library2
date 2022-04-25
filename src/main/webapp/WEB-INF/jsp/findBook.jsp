@@ -13,5 +13,12 @@
             </label>
             <button type="submit">Submit</button>
         </form>
+        <form action="/book/find/title" method="get">
+            <p>book title:</p>
+            <label>
+                <input type="text" name="title">
+            </label>
+            <button type="submit">Submit</button>
+        </form>
     </body>
 </html>

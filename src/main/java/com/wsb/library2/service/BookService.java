@@ -45,5 +45,7 @@ public class BookService {
         return bookCrudRepository.findById(bookId).map(savedBook -> bookCrudRepository.save(book));
     }
 
-
+    public List<Book> findBooksByTitle(String title) {
+        return bookCrudRepository.findBooksByTitle(title);
+    }
 }

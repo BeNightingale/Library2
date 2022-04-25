@@ -19,7 +19,7 @@ public interface BookCrudRepository extends JpaRepository<Book, Integer> {
     @Query("FROM Book ORDER BY author")
     List<Book> getAllOrderByAuthor();
 
-    @Query("FROM Book WHERE title = :title ORDER BY author")
+    @Query("FROM Book WHERE title LIKE %:title% ORDER BY author")
     List<Book> findBooksByTitle(@Param("title") String title);
 
     @Query("FROM Book WHERE author = :author ORDER BY title")
