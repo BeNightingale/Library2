@@ -4,13 +4,13 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
 @Entity
 @Table(name = "readers")
 public class Reader {
@@ -30,4 +30,13 @@ public class Reader {
     private LocalDate registrationDate;
     @Column(name = "resignation_date")
     private LocalDate resignationDate;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "reader")
+    private List<Loan> loans;
+
+    @Override
+    public String toString() {
+        return String.format("{reader id: %s, first name: %s, last name: %s, address: %s, telephone number: %s," +
+                        " registration date: %s, resignation date: %s",
+                readerId, firstName, lastName, address, telephoneNumber, registrationDate, resignationDate);
+    }
 }

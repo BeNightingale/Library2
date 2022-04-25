@@ -7,19 +7,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
 @Entity
 @Table(name = "books")
 public class Book {
@@ -34,5 +30,13 @@ public class Book {
     private String author;
     @Column(name = "isbn", nullable = false)
     private Long isbn;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "book")
+    private List<Loan> loans = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return String.format("{book id: %s, book title: %s, book author: %s, isbn: %s",
+                bookId, title, author, isbn);
+    }
 
 }
