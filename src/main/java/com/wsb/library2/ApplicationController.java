@@ -33,29 +33,45 @@ public class ApplicationController {
         model.addAttribute("books", bookService.findBooksByTitle(title));
         return "bookList";
     }
+    @PostMapping("/book/delete")
+    public String deleteBook(@RequestParam("id") Integer id) {
+        bookService.deleteBook(id);
+        return "operationSuccess";
+    }
+    @GetMapping("/book/add")
+    public String addBookForm() {
+        return "addBook";
+    }
 
-    @GetMapping("/reader")
-    public String showReaderById(ModelMap model, @RequestParam(name = "id") Integer id) {
-        model.addAttribute("reader", readerService.getReader(id).orElseThrow());
-        return "reader";
+    @PostMapping("/add/success")
+    public String addBook(ModelMap model,
+                          @RequestParam(name = "title") String title,
+                          @RequestParam(name = "author") String author,
+                          @RequestParam(name = "isbn") Long isbn) {
+        model.addAttribute(
+                "book",
+                bookService.addBook(title, author, isbn));
+        return "operationSuccess";
     }
 
     @GetMapping("/reader/find")
     public String findReaderForm() {
         return "findReader";
     }
-
-    @GetMapping("/reader/find/name")
-    public  String findReadersByFullName(ModelMap model, @RequestParam(name = "firstName") String firstName,
-                                         @RequestParam(name = "lastName") String lastName) {
-        model.addAttribute("readers", readerService.findReadersByFullName(firstName, lastName));
-        return "readerList";
+    @GetMapping("/reader")
+    public String showReaderById(ModelMap model, @RequestParam(name = "id") Integer id) {
+        model.addAttribute("reader", readerService.getReader(id).orElseThrow());
+        return "reader";
     }
 
-    @PostMapping("/book/delete")
-    public String deleteBook(@RequestParam("id") Integer id) {
-        bookService.deleteBook(id);
-        return "deletedBook";
+    @GetMapping("/reader/find/name")
+    public  String findReadersByFullName(ModelMap model,
+                                         @RequestParam(name = "firstName") String firstName,
+                                         @RequestParam(name = "lastName") String lastName) {
+        model.addAttribute(
+                "readers",
+                readerService.findReadersByFullName(firstName, lastName));
+        return "readerList";
     }
 
     @GetMapping("/")

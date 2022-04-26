@@ -7,8 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-    <html lang="en">
+    <html>
         <head>
+            <meta charset="utf-8">
             <title>Library</title>
         </head>
 
@@ -17,7 +18,7 @@
             <div>
                 <p>Regarding a book:</p>
                 <a href="/book/find">find a book</a><br>
-                <a href="ścieżka">add a book</a><br>
+                <a href="/book/add">add a book</a><br>
                 <a href="ścieżka">check if the book is available</a>
             </div>
             <div>
