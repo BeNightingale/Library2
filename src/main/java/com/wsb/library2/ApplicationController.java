@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ApplicationController {
-
     @Autowired
     private BookService bookService;
     @Autowired
@@ -72,6 +71,23 @@ public class ApplicationController {
                 "readers",
                 readerService.findReadersByFullName(firstName, lastName));
         return "readerList";
+    }
+
+    @GetMapping("/reader/add")
+    public String addReaderForm() {
+        return "addReader";
+    }
+
+    @PostMapping("/reader/add")
+    public String addReader(ModelMap model,
+                            @RequestParam(name = "firstName") String firstName,
+                            @RequestParam(name = "lastName") String lastName,
+                            @RequestParam(name = "address") String address,
+                            @RequestParam(name = "telephoneNumber") String telephoneNumber) {
+        model.addAttribute(
+                "reader",
+                readerService.addReader(firstName, lastName, address, telephoneNumber));
+        return "operationSuccess";
     }
 
     @GetMapping("/")

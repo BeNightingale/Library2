@@ -16,13 +16,13 @@ public class ReaderService {
     private ReaderCrudRepository readerCrudRepository;
 
     public Reader addReader(String firstName, String lastName, String address,
-                            String telephoneNumber, LocalDate registrationDate) {
+                            String telephoneNumber) {
         Reader reader = Reader.builder()
                 .firstName(firstName)
                 .lastName(lastName)
                 .address(address)
                 .telephoneNumber(telephoneNumber)
-                .registrationDate(registrationDate)
+                .registrationDate(LocalDate.now())
                 .build();
         return readerCrudRepository.save(reader);
     }
