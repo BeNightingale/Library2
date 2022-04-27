@@ -13,12 +13,14 @@
                 <th>title</th>
                 <th>author</th>
                 <th>isbn</th>
+                <th>is borrowed</th>
             </tr>
             <tr>
                 <td>${book.bookId}</td>
                 <td>${book.title}</td>
                 <td>${book.author}</td>
                 <td>${book.isbn}</td>
+                <td>${book.borrowed}</td>
             </tr>
         </table>
         <br>

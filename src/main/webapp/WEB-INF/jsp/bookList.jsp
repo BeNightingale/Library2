@@ -14,6 +14,7 @@
         <th>title</th>
         <th>author</th>
         <th>isbn</th>
+        <th>is borrowed</th>
       </tr>
       <c:forEach var="book" items="${books}">
         <tr>
@@ -21,6 +22,7 @@
           <td><a href="/book?id=${book.bookId}">${book.title}</a></td>
           <td><a href="/book?id=${book.bookId}">${book.author}</a></td>
           <td><a href="/book?id=${book.bookId}">${book.isbn}</a></td>
+          <td><a href="/book?id=${book.bookId}">${book.borrowed}</a></td>
         </tr>
       </c:forEach>
     </table>

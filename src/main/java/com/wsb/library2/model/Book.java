@@ -18,7 +18,6 @@ import java.util.List;
 @Entity
 @Table(name = "books")
 public class Book {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "book_id")
@@ -38,4 +37,10 @@ public class Book {
                 bookId, title, author, isbn);
     }
 
+    public boolean isBorrowed() {
+        if (this.getLoans() == null || this.getLoans().isEmpty()) {
+            return false;
+        }
+        return this.getLoans().stream().anyMatch(x -> x.getReturnDate() == null);
+    }
 }
