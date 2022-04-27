@@ -39,7 +39,7 @@ public class ApplicationController {
         return "bookList";
     }
     @PostMapping("/book/delete")
-    public String deleteBook(@RequestParam("id") Integer id) {
+    public String deleteBook(@RequestParam(name = "id") Integer id) {
         bookService.deleteBook(id);
         return "operationSuccess";
     }
@@ -60,7 +60,7 @@ public class ApplicationController {
     }
 
     @PostMapping("/book/return")
-    public String returnBook(@RequestParam("id") Integer id) {
+    public String returnBook(@RequestParam(name = "id") Integer id) {
         bookService.returnBook(id);
         return "operationSuccess";
     }
@@ -99,6 +99,12 @@ public class ApplicationController {
         model.addAttribute(
                 "reader",
                 readerService.addReader(firstName, lastName, address, telephoneNumber));
+        return "operationSuccess";
+    }
+
+    @PostMapping("/reader/resign")
+    public String registerReaderResignation(@RequestParam(name = "readerId") Integer readerId) {
+        readerService.registerResignation(readerId);
         return "operationSuccess";
     }
 

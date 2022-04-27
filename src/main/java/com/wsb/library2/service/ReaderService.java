@@ -41,7 +41,9 @@ public class ReaderService {
 
     public void registerResignation(int readerId) {
         Reader reader = getReader(readerId).orElseThrow();
-        reader.setResignationDate(LocalDate.now());
+        if (reader.getResignationDate() == null) {
+            reader.setResignationDate(LocalDate.now());
+        }
         readerCrudRepository.save(reader);
     }
 

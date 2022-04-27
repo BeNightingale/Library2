@@ -35,6 +35,14 @@
             </tr>
         </table>
         <br>
+        <form action="/reader/resign" method="post">
+            <label>
+                <br>
+                <input type="hidden" name="readerId" value=${reader.readerId}>
+            </label>
+            <button type="submit">Register resignation</button>
+        </form>
+        <br>
         <a href="/">Back to main menu</a>
     </body>
 </html>
