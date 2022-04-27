@@ -1,13 +1,17 @@
 package com.wsb.library2;
 
 import com.wsb.library2.service.BookService;
+import com.wsb.library2.service.LoanService;
 import com.wsb.library2.service.ReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.time.LocalDate;
 
 @Controller
 public class ApplicationController {
@@ -15,6 +19,8 @@ public class ApplicationController {
     private BookService bookService;
     @Autowired
     private ReaderService readerService;
+    @Autowired
+    private LoanService loanService;
 
     @GetMapping("/book")
     public String showBookById(ModelMap model, @RequestParam(name = "id") Integer id) {
@@ -87,6 +93,23 @@ public class ApplicationController {
         model.addAttribute(
                 "reader",
                 readerService.addReader(firstName, lastName, address, telephoneNumber));
+        return "operationSuccess";
+    }
+
+    @GetMapping("/loan/add")
+    public String addLoanForm() {
+        return "addLoan";
+    }
+
+    @PostMapping("/loan/add")
+    public String addLoan(ModelMap model,
+                          @RequestParam(name = "bookId") Integer bookId,
+                          @RequestParam(name = "readerId") Integer readerId) {
+        model.addAttribute(
+                "loan",
+                loanService.addLoan(
+                        bookService.getBook(bookId).orElseThrow(),
+                        readerService.getReader(readerId).orElseThrow()));
         return "operationSuccess";
     }
 

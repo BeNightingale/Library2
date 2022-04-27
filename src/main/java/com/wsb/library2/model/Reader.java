@@ -36,7 +36,7 @@ public class Reader {
     @Override
     public String toString() {
         return String.format("{reader id: %s, first name: %s, last name: %s, address: %s, telephone number: %s," +
-                        " registration date: %s, resignation date: %s",
+                        " registration date: %s, resignation date: %s}",
                 readerId, firstName, lastName, address, telephoneNumber, registrationDate, resignationDate);
     }
 }

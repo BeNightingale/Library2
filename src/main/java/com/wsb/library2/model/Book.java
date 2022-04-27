@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -35,7 +34,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return String.format("{book id: %s, book title: %s, book author: %s, isbn: %s",
+        return String.format("{book id: %s, book title: %s, book author: %s, isbn: %s}",
                 bookId, title, author, isbn);
     }
 

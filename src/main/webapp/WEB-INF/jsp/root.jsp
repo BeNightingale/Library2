@@ -30,7 +30,7 @@
             </div>
             <div>
                 <p>Regarding loans:</p>
-                <a href="ścieżka">register lending a book</a><br>
+                <a href="/loan/add">register lending a book</a><br>
                 <a href="ścieżka">register returning a book</a>
             </div>
         </body>
