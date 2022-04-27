@@ -5,12 +5,9 @@ import com.wsb.library2.model.Loan;
 import com.wsb.library2.repository.BookCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
-
 
 @Service
 public class BookService {
@@ -59,7 +56,7 @@ public class BookService {
             Optional<Loan> loan = book.getLoans()
                     .stream()
                     .filter(l -> l.getReturnDate() == null)
-                     .findFirst();
+                    .findFirst();
             loan.orElseThrow().setReturnDate(LocalDate.now());
             bookCrudRepository.save(book);
         }

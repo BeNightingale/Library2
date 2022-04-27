@@ -38,6 +38,15 @@
             </label>
             <button type="submit">Return this book</button>
         </form>
+        <form action="/loan/add" method="post">
+            <label>
+                <br>
+                <input type="hidden" name="bookId" value=${book.bookId}>
+                <a>Input borrower's id:</a>
+                <input type="number" name="readerId">
+            </label>
+            <button type="submit">Loan this book</button>
+        </form>
         <br>
         <a href="/">Back to main menu</a>
     </body>
