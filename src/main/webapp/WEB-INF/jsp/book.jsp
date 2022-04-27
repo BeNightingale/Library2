@@ -31,6 +31,13 @@
             </label>
             <button type="submit">Delete this book</button>
         </form>
+        <form action="/book/return" method="post">
+            <label>
+                <br>
+                <input type="hidden" name="id" value=${book.bookId}>
+            </label>
+            <button type="submit">Return this book</button>
+        </form>
         <br>
         <a href="/">Back to main menu</a>
     </body>

@@ -1,11 +1,15 @@
 package com.wsb.library2.service;
 
 import com.wsb.library2.model.Book;
+import com.wsb.library2.model.Loan;
 import com.wsb.library2.repository.BookCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 
 @Service
@@ -47,5 +51,17 @@ public class BookService {
 
     public List<Book> findBooksByTitle(String title) {
         return bookCrudRepository.findBooksByTitle(title);
+    }
+
+    public void returnBook(int bookId) {
+        Book book = bookCrudRepository.getById(bookId);
+        if (book.isBorrowed()) {
+            Optional<Loan> loan = book.getLoans()
+                    .stream()
+                    .filter(l -> l.getReturnDate() == null)
+                     .findFirst();
+            loan.orElseThrow().setReturnDate(LocalDate.now());
+            bookCrudRepository.save(book);
+        }
     }
 }

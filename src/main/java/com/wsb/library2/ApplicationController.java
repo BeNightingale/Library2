@@ -59,6 +59,12 @@ public class ApplicationController {
         return "operationSuccess";
     }
 
+    @PostMapping("/book/return")
+    public String returnBook(@RequestParam("id") Integer id) {
+        bookService.returnBook(id);
+        return "operationSuccess";
+    }
+
     @GetMapping("/reader/find")
     public String findReaderForm() {
         return "findReader";
