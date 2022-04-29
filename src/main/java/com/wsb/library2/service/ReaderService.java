@@ -1,5 +1,6 @@
 package com.wsb.library2.service;
 
+import com.wsb.library2.exception.OperationFailedException;
 import com.wsb.library2.exception.ResourceNotFoundException;
 import com.wsb.library2.model.Reader;
 import com.wsb.library2.repository.ReaderCrudRepository;
@@ -41,9 +42,10 @@ public class ReaderService {
 
     public void registerResignation(int readerId) {
         Reader reader = getReader(readerId).orElseThrow(ResourceNotFoundException::new);
-        if (reader.getResignationDate() == null) {
-            reader.setResignationDate(LocalDate.now());
+        if (reader.getResignationDate() != null) {
+            throw new OperationFailedException();
         }
+        reader.setResignationDate(LocalDate.now());
         readerCrudRepository.save(reader);
     }
 }

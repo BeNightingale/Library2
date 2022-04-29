@@ -45,4 +45,8 @@ public class Reader {
                 .filter(loan -> loan.getReturnDate() == null)
                 .collect(Collectors.toList());
     }
+
+    public boolean hasReturnedBooks() {
+        return this.getNotReturnedBooks() == null || this.getNotReturnedBooks().size() == 0;
+    }
 }

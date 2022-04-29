@@ -1,5 +1,6 @@
 package com.wsb.library2;
 
+import com.wsb.library2.exception.OperationFailedException;
 import com.wsb.library2.exception.ResourceNotFoundException;
 import com.wsb.library2.exception.ResourceUnavailable;
 import org.slf4j.Logger;
@@ -26,6 +27,14 @@ public class ApplicationControllerAdvice {
 
     @ExceptionHandler(ResourceUnavailable.class)
     public ModelAndView handle(ResourceUnavailable ex) {
+        ModelAndView modelAndView = new ModelAndView("resourceException");
+        LOGGER.warn("Something went wrong: {}", ex.getMessage(), ex);
+        modelAndView.addObject("message", ex.getMessage());
+        return modelAndView;
+    }
+
+    @ExceptionHandler(OperationFailedException.class)
+    public ModelAndView handle(OperationFailedException ex) {
         ModelAndView modelAndView = new ModelAndView("resourceException");
         LOGGER.warn("Something went wrong: {}", ex.getMessage(), ex);
         modelAndView.addObject("message", ex.getMessage());

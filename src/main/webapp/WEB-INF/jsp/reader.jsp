@@ -49,11 +49,15 @@
             </c:forEach>
         </table>
         <form action="/reader/resign" method="post">
-            <label>
-                <br>
-                <input type="hidden" name="readerId" value=${reader.readerId}>
-            </label>
-            <button type="submit">Register resignation</button>
+            <c:choose>
+                <c:when test="${reader.hasReturnedBooks()==true && reader.resignationDate == null}">
+                    <label>
+                        <br>
+                        <input type="hidden" name="readerId" value=${reader.readerId}>
+                    </label>
+                    <button type="submit">Register resignation</button>
+                </c:when>
+            </c:choose>
         </form>
         <br>
         <a href="/">Back to main menu</a>

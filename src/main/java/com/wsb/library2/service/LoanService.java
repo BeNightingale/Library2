@@ -1,5 +1,6 @@
 package com.wsb.library2.service;
 
+import com.wsb.library2.exception.ResourceNotFoundException;
 import com.wsb.library2.exception.ResourceUnavailable;
 import com.wsb.library2.model.Book;
 import com.wsb.library2.model.Loan;
@@ -18,6 +19,9 @@ public class LoanService {
     public Loan addLoan(Book book, Reader reader) {
         if (book.isBorrowed()) {
             throw new ResourceUnavailable();
+        }
+        if (reader.getResignationDate() != null) {
+            throw new ResourceNotFoundException();
         }
         Loan loan = Loan.builder()
                 .book(book)
