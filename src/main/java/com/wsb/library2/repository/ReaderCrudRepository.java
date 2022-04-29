@@ -16,7 +16,7 @@ public interface ReaderCrudRepository extends JpaRepository<Reader, Integer>{
     @Query("FROM Reader ORDER BY lastName")
     List<Reader> getAllOrderByLastName();
 
-    @Query("FROM Reader WHERE firstName = :firstName AND lastName = :lastName ORDER BY readerId")
+    @Query("FROM Reader WHERE firstName LIKE %:firstName% AND lastName LIKE %:lastName% ORDER BY readerId")
     List<Reader> findAllByFullName(@Param("firstName") String firstName, @Param("lastName") String lastName);
 }
 

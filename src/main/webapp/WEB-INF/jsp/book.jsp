@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,12 +32,17 @@
             </label>
             <button type="submit">Delete this book</button>
         </form>
+
         <form action="/book/return" method="post">
             <label>
                 <br>
-                <input type="hidden" name="id" value=${book.bookId}>
+                <c:choose>
+                    <c:when test="${book.isBorrowed()==true}">
+                        <input type="hidden" name="id" value=${book.bookId}>
+                        <button type="submit">Return this book</button>
+                    </c:when>
+                </c:choose>
             </label>
-            <button type="submit">Return this book</button>
         </form>
         <form action="/loan/add" method="post">
             <label>

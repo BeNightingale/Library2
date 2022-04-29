@@ -1,5 +1,6 @@
 package com.wsb.library2.service;
 
+import com.wsb.library2.exception.ResourceNotFoundException;
 import com.wsb.library2.model.Book;
 import com.wsb.library2.model.Loan;
 import com.wsb.library2.repository.BookCrudRepository;
@@ -57,7 +58,7 @@ public class BookService {
                     .stream()
                     .filter(l -> l.getReturnDate() == null)
                     .findFirst();
-            loan.orElseThrow().setReturnDate(LocalDate.now());
+            loan.orElseThrow(ResourceNotFoundException::new).setReturnDate(LocalDate.now());
             bookCrudRepository.save(book);
         }
     }

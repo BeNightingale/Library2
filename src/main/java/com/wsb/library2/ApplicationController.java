@@ -1,5 +1,6 @@
 package com.wsb.library2;
 
+import com.wsb.library2.exception.ResourceNotFoundException;
 import com.wsb.library2.service.BookService;
 import com.wsb.library2.service.LoanService;
 import com.wsb.library2.service.ReaderService;
@@ -24,7 +25,7 @@ public class ApplicationController {
 
     @GetMapping("/book")
     public String showBookById(ModelMap model, @RequestParam(name = "id") Integer id) {
-        model.addAttribute("book", bookService.getBook(id).orElseThrow());
+        model.addAttribute("book", bookService.getBook(id).orElseThrow(ResourceNotFoundException::new));
         return "book";
     }
 
@@ -71,7 +72,7 @@ public class ApplicationController {
     }
     @GetMapping("/reader")
     public String showReaderById(ModelMap model, @RequestParam(name = "id") Integer id) {
-        model.addAttribute("reader", readerService.getReader(id).orElseThrow());
+        model.addAttribute("reader", readerService.getReader(id).orElseThrow(ResourceNotFoundException::new));
         return "reader";
     }
 
@@ -120,8 +121,8 @@ public class ApplicationController {
         model.addAttribute(
                 "loan",
                 loanService.addLoan(
-                        bookService.getBook(bookId).orElseThrow(),
-                        readerService.getReader(readerId).orElseThrow()));
+                        bookService.getBook(bookId).orElseThrow(ResourceNotFoundException::new),
+                        readerService.getReader(readerId).orElseThrow(ResourceNotFoundException::new)));
         return "operationSuccess";
     }
 
