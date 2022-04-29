@@ -34,24 +34,28 @@
         </form>
 
         <form action="/book/return" method="post">
-            <label>
-                <br>
-                <c:choose>
-                    <c:when test="${book.isBorrowed()==true}">
+            <br>
+            <c:choose>
+                <c:when test="${book.isBorrowed()==true}">
+                    <label>
                         <input type="hidden" name="id" value=${book.bookId}>
                         <button type="submit">Return this book</button>
-                    </c:when>
-                </c:choose>
-            </label>
+                    </label>
+                </c:when>
+            </c:choose>
         </form>
         <form action="/loan/add" method="post">
-            <label>
-                <br>
-                <input type="hidden" name="bookId" value=${book.bookId}>
-                <a>Input borrower's id:</a>
-                <input type="number" name="readerId">
-            </label>
-            <button type="submit">Loan this book</button>
+            <br>
+            <c:choose>
+                <c:when test="${!book.isBorrowed()==true}">
+                <label>
+                    <input type="hidden" name="bookId" value=${book.bookId}>
+                    <a>Input borrower's id:</a>
+                    <input type="number" name="readerId">
+                    <button type="submit">Loan this book</button>
+                </label>
+                </c:when>
+            </c:choose>
         </form>
         <br>
         <a href="/">Back to main menu</a>
