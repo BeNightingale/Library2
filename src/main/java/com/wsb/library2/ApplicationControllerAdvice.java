@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.ModelAndView;
 
 @ControllerAdvice
 public class ApplicationControllerAdvice {
@@ -16,15 +17,18 @@ public class ApplicationControllerAdvice {
 
     @ExceptionHandler(ResourceNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String handle(ResourceNotFoundException ex) {
+    public ModelAndView handle(ResourceNotFoundException ex) {
+        ModelAndView modelAndView = new ModelAndView("resourceException");
+        modelAndView.addObject("message", ex.getMessage());
         LOGGER.warn("Something went wrong: {}", ex.getMessage(), ex);
-        return "resourceNotFound";
+        return modelAndView;
     }
 
     @ExceptionHandler(ResourceUnavailable.class)
-    public  String handle(ResourceUnavailable ex) {
+    public ModelAndView handle(ResourceUnavailable ex) {
+        ModelAndView modelAndView = new ModelAndView("resourceException");
         LOGGER.warn("Something went wrong: {}", ex.getMessage(), ex);
-        return "resourceUnavailable";
+        modelAndView.addObject("message", ex.getMessage());
+        return modelAndView;
     }
-
 }
