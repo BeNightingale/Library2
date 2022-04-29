@@ -1,10 +1,10 @@
 package com.wsb.library2.model;
 
 import lombok.*;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -38,5 +38,11 @@ public class Reader {
         return String.format("{reader id: %s, first name: %s, last name: %s, address: %s, telephone number: %s," +
                         " registration date: %s, resignation date: %s}",
                 readerId, firstName, lastName, address, telephoneNumber, registrationDate, resignationDate);
+    }
+
+    public List<Loan> getNotReturnedBooks() {
+        return getLoans().stream()
+                .filter(loan -> loan.getReturnDate() == null)
+                .collect(Collectors.toList());
     }
 }

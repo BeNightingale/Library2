@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: beatka
-  Date: 24/04/2022
-  Time: 12:47
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +29,25 @@
             </tr>
         </table>
         <br>
+        <table border="1">
+            <caption>Not returned books:</caption>
+            <tr>
+                <th>loan date</th>
+                <th>book id</th>
+                <th>title</th>
+                <th>author</th>
+                <th>isbn</th>
+            </tr>
+            <c:forEach var="loan" items="${reader.notReturnedBooks}">
+                <tr>
+                    <td>${loan.loanDate}</td>
+                    <td><a href="/book?id=${loan.book.bookId}">${loan.book.bookId}</a></td>
+                    <td><a href="/book?id=${loan.book.bookId}">${loan.book.title}</a></td>
+                    <td><a href="/book?id=${loan.book.bookId}">${loan.book.author}</a></td>
+                    <td><a href="/book?id=${loan.book.bookId}">${loan.book.isbn}</a></td>
+                </tr>
+            </c:forEach>
+        </table>
         <form action="/reader/resign" method="post">
             <label>
                 <br>

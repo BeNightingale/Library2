@@ -8,11 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.time.LocalDate;
 
 @Controller
 public class ApplicationController {
@@ -70,9 +67,12 @@ public class ApplicationController {
     public String findReaderForm() {
         return "findReader";
     }
+
     @GetMapping("/reader")
     public String showReaderById(ModelMap model, @RequestParam(name = "id") Integer id) {
-        model.addAttribute("reader", readerService.getReader(id).orElseThrow(ResourceNotFoundException::new));
+        model.addAttribute(
+                "reader",
+                readerService.getReader(id).orElseThrow(ResourceNotFoundException::new));
         return "reader";
     }
 
