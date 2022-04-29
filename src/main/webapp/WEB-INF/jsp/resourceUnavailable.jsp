@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Resource not found in database</title>
+    <title>Resource unavailable</title>
 </head>
 <body>
     <br>
     <br>
     <table border="1">
-        <th>Resource not found in database</th>
+        <th>Resource unavailable</th>
     </table>
     <br>
     <a href="/">Back to main menu</a>
