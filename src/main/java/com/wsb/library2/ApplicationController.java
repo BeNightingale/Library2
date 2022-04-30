@@ -115,6 +115,12 @@ public class ApplicationController {
         return "readerList";
     }
 
+    @GetMapping("reader/find/all")
+    public String getAllReadersByLastName(ModelMap model) {
+        model.addAttribute("readers", readerService.getAllReaders());
+        return "readerList";
+    }
+
     @GetMapping("/reader/add")
     public String addReaderForm() {
         return "addReader";
@@ -155,10 +161,10 @@ public class ApplicationController {
         return "operationSuccess";
     }
 
-    @GetMapping("reader/find/all")
-    public String getAllReadersByLastName(ModelMap model) {
-        model.addAttribute("readers", readerService.getAllReaders());
-        return "readerList";
+    @GetMapping("loan/find/all")
+    public String getAllLoans(ModelMap model) {
+        model.addAttribute("loans", loanService.getLoans());
+        return "loanList";
     }
 
     @GetMapping("/")

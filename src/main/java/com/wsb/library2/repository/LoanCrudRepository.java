@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface LoanCrudRepository extends JpaRepository<Loan, Integer> {
 
-    @Query("FROM Loan ORDER BY loanId")
-    List<Loan> getAllOrderById();
+    @Query("FROM Loan ORDER BY loanDate")
+    List<Loan> getAllOrderByLoanDate();
 }
