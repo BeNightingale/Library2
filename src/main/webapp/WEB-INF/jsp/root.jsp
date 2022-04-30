@@ -19,7 +19,7 @@
                 <p>Regarding a book:</p>
                 <a href="/book/find">find a book</a><br>
                 <a href="/book/add">add a book</a><br>
-                <a href="ścieżka">check if the book is available</a>
+                <a href="book/find/all">show all books</a>
             </div>
             <div>
                 <p>Regarding a reader:</p>

@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Finding a reader</title>
+        <title>Reader search results</title>
     </head>
     <body>
         <table border="1">

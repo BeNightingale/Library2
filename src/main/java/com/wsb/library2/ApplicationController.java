@@ -38,6 +38,12 @@ public class ApplicationController {
         return "bookList";
     }
 
+    @GetMapping("book/find/all")
+    public String getAllBooks(ModelMap model) {
+        model.addAttribute("books", bookService.getBooks());
+        return "bookList";
+    }
+
     @PostMapping("/book/delete")
     public String deleteBook(@RequestParam(name = "id") Integer id) {
         bookService.deleteBook(id);

@@ -30,7 +30,7 @@ public class BookService {
     }
 
     public List<Book> getBooks() {
-        return bookCrudRepository.findAll();
+        return bookCrudRepository.getAllOrderByTitle();
     }
 
     public Optional<Book> getBook(int bookId) {
