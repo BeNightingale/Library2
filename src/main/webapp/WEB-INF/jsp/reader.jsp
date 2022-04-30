@@ -60,6 +60,13 @@
             </c:choose>
         </form>
         <br>
+        <form action="/reader/update" method="get">
+            <label>
+                <input type="hidden" name="readerId" value=${reader.readerId}>
+            </label>
+            <button type="submit">Update this reader data</button>
+        </form>
+        <br>
         <a href="/">Back to main menu</a>
     </body>
 </html>

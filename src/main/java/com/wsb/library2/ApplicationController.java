@@ -144,6 +144,27 @@ public class ApplicationController {
         return "operationSuccess";
     }
 
+    @GetMapping("reader/update")
+    public String updateReaderForm(ModelMap model,
+                                 @RequestParam(name = "readerId") Integer readerId) {
+        model.addAttribute("reader",
+                readerService.getReader(readerId).orElseThrow(ResourceNotFoundException::new));
+        return "updateReaderData";
+    }
+
+    @PostMapping("/reader/update/data")
+    public String updateReader(ModelMap model,
+                               @RequestParam(name = "readerId") Integer readerId,
+                               @RequestParam(name = "firstName") String firstName,
+                               @RequestParam(name = "lastName") String lastName,
+                               @RequestParam(name = "address") String address,
+                               @RequestParam(name = "telephoneNumber") String telephoneNumber) {
+        model.addAttribute(
+                "reader",
+                readerService.updateReader(readerId, firstName, lastName, address, telephoneNumber));
+        return "operationSuccess";
+    }
+
     @GetMapping("/loan/add")
     public String addLoanForm() {
         return "addLoan";

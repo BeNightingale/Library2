@@ -10,16 +10,9 @@ import java.util.List;
 @Repository
 public interface BookCrudRepository extends JpaRepository<Book, Integer> {
 
-
     @Query("FROM Book ORDER BY title")
     List<Book> getAllOrderByTitle();
 
     @Query("FROM Book WHERE title LIKE %:title% ORDER BY author")
     List<Book> findBooksByTitle(@Param("title") String title);
-
-    @Query("FROM Book WHERE author = :author ORDER BY title")
-    List<Book> findBooksByAuthor(@Param("author") String author);
-
-    @Query("FROM Book WHERE title = :title AND author = :author ORDER BY bookId")
-    List<Book> findBooksByTitleAndAuthor(@Param("title") String title, @Param("author") String author);
 }

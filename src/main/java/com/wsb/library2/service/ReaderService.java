@@ -48,4 +48,19 @@ public class ReaderService {
         reader.setResignationDate(LocalDate.now());
         readerCrudRepository.save(reader);
     }
+
+    public Reader updateReader(int readerId, String firstName, String lastName, String address,
+                                         String telephoneNumber) {
+        Reader reader = getReader(readerId).orElseThrow(ResourceNotFoundException::new);
+        Reader reader1 = Reader.builder()
+                .readerId(readerId)
+                .firstName(firstName)
+                .lastName(lastName)
+                .address(address)
+                .telephoneNumber(telephoneNumber)
+                .registrationDate(reader.getRegistrationDate())
+                .resignationDate(reader.getResignationDate())
+                .build();
+        return  readerCrudRepository.save(reader1);
+    }
 }
