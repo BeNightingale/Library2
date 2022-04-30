@@ -149,6 +149,12 @@ public class ApplicationController {
         return "operationSuccess";
     }
 
+    @GetMapping("reader/find/all")
+    public String getAllReadersByLastName(ModelMap model) {
+        model.addAttribute("readers", readerService.getAllReaders());
+        return "readerList";
+    }
+
     @GetMapping("/")
     public String root() {
         return "root";

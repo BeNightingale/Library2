@@ -10,9 +10,6 @@ import java.util.List;
 @Repository
 public interface ReaderCrudRepository extends JpaRepository<Reader, Integer>{
 
-    @Query("FROM Reader ORDER BY readerId")
-    List<Reader> getAllOrderById();
-
     @Query("FROM Reader ORDER BY lastName")
     List<Reader> getAllOrderByLastName();
 

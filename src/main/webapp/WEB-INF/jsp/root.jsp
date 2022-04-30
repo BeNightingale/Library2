@@ -25,8 +25,7 @@
                 <p>Regarding a reader:</p>
                 <a href="/reader/find">find a reader</a><br>
                 <a href="/reader/add">add a reader</a><br>
-                <a href="ścieżka">check reader's loans</a><br>
-                <a href="ścieżka">register reader's resignation</a><br>
+                <a href="reader/find/all">show all readers</a><br>
             </div>
             <div>
                 <p>Regarding loans:</p>
