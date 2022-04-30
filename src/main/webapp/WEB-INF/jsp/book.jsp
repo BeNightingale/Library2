@@ -57,6 +57,12 @@
                 </c:when>
             </c:choose>
         </form>
+        <form action="/book/update" method="get">
+            <label>
+                <input type="hidden" name="bookId" value=${book.bookId}>
+            </label>
+            <button type="submit">Update this book data</button>
+        </form>
         <br>
         <a href="/">Back to main menu</a>
     </body>

@@ -22,7 +22,8 @@ public class ApplicationController {
 
     @GetMapping("/book")
     public String showBookById(ModelMap model, @RequestParam(name = "id") Integer id) {
-        model.addAttribute("book", bookService.getBook(id).orElseThrow(ResourceNotFoundException::new));
+        model.addAttribute("book",
+                bookService.getBook(id).orElseThrow(ResourceNotFoundException::new));
         return "book";
     }
 
@@ -36,11 +37,13 @@ public class ApplicationController {
         model.addAttribute("books", bookService.findBooksByTitle(title));
         return "bookList";
     }
+
     @PostMapping("/book/delete")
     public String deleteBook(@RequestParam(name = "id") Integer id) {
         bookService.deleteBook(id);
         return "operationSuccess";
     }
+
     @GetMapping("/book/add")
     public String addBookForm() {
         return "addBook";
@@ -60,6 +63,26 @@ public class ApplicationController {
     @PostMapping("/book/return")
     public String returnBook(@RequestParam(name = "id") Integer id) {
         bookService.returnBook(id);
+        return "operationSuccess";
+    }
+
+    @GetMapping("book/update")
+    public String updateBookForm(ModelMap model,
+                                 @RequestParam(name = "bookId") Integer bookId) {
+        model.addAttribute("book",
+                bookService.getBook(bookId).orElseThrow(ResourceNotFoundException::new));
+        return "updateBookData";
+    }
+
+    @PostMapping("/book/update/data")
+    public String updateBook(ModelMap model,
+                             @RequestParam(name = "bookId") Integer bookId,
+                             @RequestParam(name = "title") String title,
+                             @RequestParam(name = "author") String author,
+                             @RequestParam(name = "isbn") Long isbn) {
+        model.addAttribute(
+                "book",
+                bookService.updateBook(bookId, title, author, isbn));
         return "operationSuccess";
     }
 
