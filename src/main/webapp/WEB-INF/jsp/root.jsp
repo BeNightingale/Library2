@@ -24,5 +24,7 @@
                 <a href="/loan/add">register lending a book</a><br>
                 <a href="/loan/find/all">show all loans</a>
             </div>
+            <br>
+            <a href="/logout">logout</a>
         </body>
     </html>
