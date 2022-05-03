@@ -18,10 +18,10 @@ public class Loan {
     @Column(name = "loan_id")
     private int loanId;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "book_id")
+    @JoinColumn(name = "book_id", nullable = false)
     private Book book;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "reader_id")
+    @JoinColumn(name = "reader_id", nullable = false)
     private Reader reader;
     @Column(name = "loan_date", nullable = false)
     private LocalDate loanDate;
