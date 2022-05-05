@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Builder
 @Entity
 @Table(name = "readers")
-public class Reader {
+public class Reader implements java.io.Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "reader_id")

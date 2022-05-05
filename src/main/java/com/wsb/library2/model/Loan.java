@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Builder
 @Entity
 @Table(name = "loans")
-public class Loan {
+public class Loan implements java.io.Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "loan_id")

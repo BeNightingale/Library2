@@ -1,0 +1,68 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/jason-leung-D4YrzSwyIEc-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    font-family: 'Vollkorn', serif;
+}
+
+h1 {
+    font-size: 5em;
+    margin: auto;
+    color: rgb(50, 48, 48);
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+form {
+    margin: auto;
+    text-align: center;
+    color: rgb(50, 48, 48);
+    font-size: 3em;
+}
+
+input {
+    font-size: 26px;
+}
+
+.btn {
+    padding: 0.25em 0.75em;
+    margin: 1em;
+
+}
+
+.btn:hover {
+    color: green;
+}
+
+.log_field {
+    background-color: #ffffff50;
+    width: 50%;
+    padding: 0.25em 0.75em;
+}
+
+.content {
+    background-color: rgba(194, 194, 194, 0.4);
+    position: relative;
+    margin: auto;
+    width: 40%;
+    height: 100vh;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.error {
+    background-color: red;
+}
+.margin {
+    height: 30%;
+}
