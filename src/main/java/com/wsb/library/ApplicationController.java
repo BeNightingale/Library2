@@ -1,9 +1,9 @@
-package com.wsb.library2;
+package com.wsb.library;
 
-import com.wsb.library2.exception.ResourceNotFoundException;
-import com.wsb.library2.service.BookService;
-import com.wsb.library2.service.LoanService;
-import com.wsb.library2.service.ReaderService;
+import com.wsb.library.exception.ResourceNotFoundException;
+import com.wsb.library.service.BookService;
+import com.wsb.library.service.LoanService;
+import com.wsb.library.service.ReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

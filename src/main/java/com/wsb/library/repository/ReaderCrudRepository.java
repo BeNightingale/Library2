@@ -1,6 +1,6 @@
-package com.wsb.library2.repository;
+package com.wsb.library.repository;
 
-import com.wsb.library2.model.Reader;
+import com.wsb.library.model.Reader;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;

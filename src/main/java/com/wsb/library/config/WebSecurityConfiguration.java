@@ -1,4 +1,4 @@
-package com.wsb.library2.config;
+package com.wsb.library.config;
 
 import org.springframework.context.annotation.Bean;
         import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.wsb.library2.exception;
+package com.wsb.library.exception;
 
 public class ResourceUnavailable extends RuntimeException {
 

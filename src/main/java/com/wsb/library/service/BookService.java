@@ -1,9 +1,9 @@
-package com.wsb.library2.service;
+package com.wsb.library.service;
 
-import com.wsb.library2.exception.ResourceNotFoundException;
-import com.wsb.library2.model.Book;
-import com.wsb.library2.model.Loan;
-import com.wsb.library2.repository.BookCrudRepository;
+import com.wsb.library.exception.ResourceNotFoundException;
+import com.wsb.library.model.Book;
+import com.wsb.library.model.Loan;
+import com.wsb.library.repository.BookCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;

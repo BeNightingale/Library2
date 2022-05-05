@@ -1,8 +1,8 @@
-package com.wsb.library2;
+package com.wsb.library;
 
-import com.wsb.library2.exception.OperationFailedException;
-import com.wsb.library2.exception.ResourceNotFoundException;
-import com.wsb.library2.exception.ResourceUnavailable;
+import com.wsb.library.exception.OperationFailedException;
+import com.wsb.library.exception.ResourceNotFoundException;
+import com.wsb.library.exception.ResourceUnavailable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

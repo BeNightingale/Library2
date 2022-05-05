@@ -1,4 +1,4 @@
-package com.wsb.library2;
+package com.wsb.library;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

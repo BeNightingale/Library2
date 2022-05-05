@@ -1,4 +1,4 @@
-package com.wsb.library2.model;
+package com.wsb.library.model;
 
 import lombok.*;
 

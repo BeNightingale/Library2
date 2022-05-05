@@ -1,6 +1,6 @@
-package com.wsb.library2.repository;
+package com.wsb.library.repository;
 
-import com.wsb.library2.model.Loan;
+import com.wsb.library.model.Loan;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

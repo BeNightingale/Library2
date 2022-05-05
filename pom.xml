@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.wsb</groupId>
-    <artifactId>library2</artifactId>
+    <artifactId>library</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>library2</name>
-    <description>library2</description>
+    <name>library</name>
+    <description>library</description>
     <properties>
         <java.version>17</java.version>
     </properties>
