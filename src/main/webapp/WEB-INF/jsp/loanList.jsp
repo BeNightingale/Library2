@@ -19,8 +19,8 @@
     <c:forEach var="loan" items="${loans}">
         <tr>
             <td><a href="/loan?id=${loan.loanId}">${loan.loanId}</a></td>
-            <td><a href="/loan?id=${loan.loanId}">${loan.book.bookId}</a></td>
-            <td><a href="/loan?id=${loan.loanId}">${loan.reader.readerId}</a></td>
+            <td><a href="/book?id=${loan.book.bookId}">${loan.book.bookId}</a></td>
+            <td><a href="/reader?id=${loan.reader.readerId}">${loan.reader.readerId}</a></td>
             <td><a href="/loan?id=${loan.loanId}">${loan.loanDate}</a></td>
             <td><a href="/loan?id=${loan.loanId}">${loan.returnDate}</a></td>
         </tr>
