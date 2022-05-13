@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Form - getting a reader by bookId</title>
+        <title>Form - getting a reader</title>
     </head>
     <body>
     <form action="/reader" method="get">

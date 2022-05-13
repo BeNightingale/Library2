@@ -53,9 +53,11 @@
                     <a>Input borrower's id:</a>
                     <input type="number" name="readerId">
                     <button type="submit">Loan this book</button>
+                    <br>
                 </label>
                 </c:when>
             </c:choose>
+            <br>
         </form>
         <form action="/book/update" method="get">
             <label>
