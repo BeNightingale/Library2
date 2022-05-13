@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <title>Reader search results</title>
     </head>
-    <body>
+    <body style="background-color: lightblue; color: black">
         <table border="1">
             <caption>Reader search results</caption>
             <tr>

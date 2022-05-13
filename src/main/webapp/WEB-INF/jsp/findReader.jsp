@@ -12,7 +12,7 @@
     <head>
         <title>Form - getting a reader</title>
     </head>
-    <body>
+    <body style="background-color: lightblue; color: black">
     <form action="/reader" method="get">
         <p>Search by reader's id:</p>
         <label>

@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <title>Adding new reader</title>
     </head>
-    <body>
+    <body style="background-color: lightblue; color: black">
         <form action="/reader/add" method="post">
             <p>Insert reader data:</p>
             <label>

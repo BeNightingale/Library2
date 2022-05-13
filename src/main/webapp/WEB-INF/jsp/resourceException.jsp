@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Resource exception</title>
 </head>
-<body>
+<body style="background-color: indianred; color: black">
 <br>
 <br>
 <table border="1">

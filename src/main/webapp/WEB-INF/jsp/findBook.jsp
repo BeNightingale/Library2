@@ -5,7 +5,7 @@
     <head>
         <title>Form - getting a book</title>
     </head>
-    <body>
+    <body style="background-color: bisque; color: black">
         <form action="/book" method="get">
             <p>Search by book id:</p>
             <label>
