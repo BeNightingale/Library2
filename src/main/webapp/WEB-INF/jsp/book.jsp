@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Finding a book</title>
 </head>
-    <body style="background-color: bisque; color: black">
+    <body style="background-color: lightgray; color: black">
         <table border="1">
             <caption>Book</caption>
             <tr>

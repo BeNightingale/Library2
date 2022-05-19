@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Adding new book</title>
 </head>
-<body style="background-color: bisque; color: black">
+<body style="background-color: lightgray; color: black">
 <form action="/add/success" method="post">
   <p>Insert book data:</p>
   <label>

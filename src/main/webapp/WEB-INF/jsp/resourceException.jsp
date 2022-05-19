@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <title>Resource exception</title>
 </head>
-<body style="background-color: indianred; color: black">
+<body style="background-color: lightgray; color: black">
 <br>
 <br>
-<table border="1">
+<table border="1" style="background-color: indianred">
     <th>${message}</th>
 </table>
 <br>

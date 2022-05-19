@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Updating reader data</title>
 </head>
-<body style="background-color: lightblue; color: black">
+<body style="background-color: lightgray; color: black">
     <form action="/reader/update/data" method="post">
         <label>
             <input type="hidden" name="readerId" value=${reader.readerId}>

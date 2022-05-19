@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Adding new loan</title>
   </head>
-  <body style="background-color: darkseagreen; color: black">
+  <body style="background-color: lightgray; color: black">
     <form action="/loan/add" method="post">
       <p>Insert loan data:</p>
       <label>

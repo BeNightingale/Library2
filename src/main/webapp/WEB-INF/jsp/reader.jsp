@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <title>Finding a reader</title>
     </head>
-    <body style="background-color: lightblue; color: black">
+    <body style="background-color: lightgray; color: black">
         <table border="1">
             <caption>Reader</caption>
             <tr>

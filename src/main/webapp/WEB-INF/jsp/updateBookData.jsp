@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <title>Updating book data</title>
     </head>
-    <body style="background-color: bisque; color: black">
+    <body style="background-color: lightgray; color: black">
         <form action="/book/update/data" method="post">
             <label>
                 <input type="hidden" name="bookId" value=${book.bookId}>
@@ -24,3 +24,4 @@
         </form>
     </body>
 </html>
+

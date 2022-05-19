@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Loan search results</title>
 </head>
-<body style="background-color: darkseagreen; color: black">
+<body style="background-color: lightgray; color: black">
 <table border="1">
     <caption>Loan search results</caption>
     <tr>
