@@ -3,6 +3,7 @@ package com.wsb.library.model;
 import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,7 +32,7 @@ public class Reader implements java.io.Serializable {
     @Column(name = "resignation_date")
     private LocalDate resignationDate;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "reader")
-    private List<Loan> loans;
+    private List<Loan> loans = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -41,9 +42,13 @@ public class Reader implements java.io.Serializable {
     }
 
     public List<Loan> getNotReturnedBooks() {
-        return getLoans().stream()
-                .filter(loan -> loan.getReturnDate() == null)
-                .collect(Collectors.toList());
+        if (loans == null) {
+            return List.of();
+        } else {
+            return getLoans().stream()
+                    .filter(loan -> loan.getReturnDate() == null)
+                    .collect(Collectors.toList());
+        }
     }
 
     public boolean hasReturnedBooks() {
