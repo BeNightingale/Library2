@@ -19,22 +19,22 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers( "/css/**").permitAll()
-                .antMatchers( "/images/**").permitAll()
-                .antMatchers( "/").hasRole("LIBRARIAN")
-                .antMatchers(HttpMethod.GET, "/**").hasAnyRole("LIBRARIAN")
-                .antMatchers(HttpMethod.POST,"/**").hasRole("LIBRARIAN")
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
-                .and().httpBasic()
-                .and().csrf().disable()
-                .logout()
-                .permitAll();
+//        http
+//                .authorizeRequests()
+//                .antMatchers( "/css/**").permitAll()
+//                .antMatchers( "/images/**").permitAll()
+//                .antMatchers( "/").hasRole("LIBRARIAN")
+//                .antMatchers(HttpMethod.GET, "/**").hasAnyRole("LIBRARIAN")
+//                .antMatchers(HttpMethod.POST,"/**").hasRole("LIBRARIAN")
+//                .anyRequest().authenticated()
+//                .and()
+//                .formLogin()
+//                .loginPage("/login")
+//                .permitAll()
+//                .and().httpBasic()
+//                .and().csrf().disable()
+//                .logout()
+//                .permitAll();
     }
 
     @Bean
