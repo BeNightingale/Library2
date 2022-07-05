@@ -4,8 +4,9 @@
   <head>
     <meta charset="utf-8">
     <title>Adding new loan</title>
+    <link rel="stylesheet" href="/css/operation.css" type="text/css">
   </head>
-  <body style="background-color: lightgray; color: black">
+  <body>
     <form action="/loan/add" method="post">
       <p>Insert loan data:</p>
       <label>
@@ -15,8 +16,11 @@
         <input type="number" name="readerId">
       </label>
       <br>
+      <br>
       <button type="submit">Add this loan</button>
     </form>
+    <br>
+    <a href="/">Back to main menu</a>
   </body>
 </html>
 

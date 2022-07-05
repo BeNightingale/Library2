@@ -4,8 +4,9 @@
     <head>
         <meta charset="utf-8">
         <title>Adding new reader</title>
+        <link rel="stylesheet" href="/css/operation.css" type="text/css">
     </head>
-    <body style="background-color: lightgray; color: black">
+    <body>
         <form action="/reader/add" method="post">
             <p>Insert reader data:</p>
             <label>
@@ -19,8 +20,11 @@
                 <input type="text" name="telephoneNumber">
             </label>
             <br>
+            <br>
             <button type="submit">Add this reader</button>
         </form>
+        <br>
+        <a href="/">Back to main menu</a>
     </body>
 </html>
 

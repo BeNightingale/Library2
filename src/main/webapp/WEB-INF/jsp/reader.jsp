@@ -5,9 +5,11 @@
     <head>
         <meta charset="utf-8">
         <title>Finding a reader</title>
+        <link rel="stylesheet" href="/css/operation.css" type="text/css">
+
     </head>
-    <body style="background-color: lightgray; color: black">
-        <table border="1">
+    <body><!-- style="background-color: lightgray; color: black"-->
+        <table border="1" style="background-color: white; color: black">
             <caption>Reader</caption>
             <tr>
                 <th>reader id</th>
@@ -29,7 +31,7 @@
             </tr>
         </table>
         <br>
-        <table border="1">
+        <table border="1" style="background-color: white; color: black">
             <caption>Not returned books:</caption>
             <tr>
                 <th>loan date</th>
@@ -64,7 +66,7 @@
             <label>
                 <input type="hidden" name="readerId" value=${reader.readerId}>
             </label>
-            <button type="submit">Update this reader data</button>
+            <button type="submit" style="background-color: white; color: black">Update this reader data</button>
         </form>
         <br>
         <a href="/">Back to main menu</a>

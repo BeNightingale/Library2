@@ -32,7 +32,7 @@
                     <a href="/loan/find/all">show all loans</a>
                 </div>
                 <br>
-                <a href="/logout">logout</a>
+                <a href="/login">logout</a>
             </article>
         </body>
     </html>

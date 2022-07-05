@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Updating reader data</title>
+    <link rel="stylesheet" href="/css/operation.css" type="text/css">
 </head>
-<body style="background-color: lightgray; color: black">
+<body>
     <form action="/reader/update/data" method="post">
         <label>
             <input type="hidden" name="readerId" value=${reader.readerId}>
@@ -24,9 +25,9 @@
             <p>Resignation date:</p>
             <td>${reader.resignationDate}</td>
         </label>
-        <br>
-        <br>
         <button type="submit">Update this reader data</button>
     </form>
+    <br>
+    <a href="/">Back to main menu</a>
 </body>
 </html>

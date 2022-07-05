@@ -4,8 +4,9 @@
 <html lang="en">
     <head>
         <title>Form - getting a book</title>
+        <link rel="stylesheet" href="/css/operation.css" type="text/css">
     </head>
-    <body style="background-color: lightgray; color: black">
+    <body>
         <form action="/book" method="get">
             <p>Search by book id:</p>
             <label>
@@ -20,5 +21,7 @@
             </label>
             <button type="submit">Submit</button>
         </form>
+        <br>
+        <a href="/">Back to main menu</a>
     </body>
 </html>

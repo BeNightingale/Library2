@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>Adding new book</title>
+  <link rel="stylesheet" href="/css/operation.css" type="text/css">
 </head>
-<body style="background-color: lightgray; color: black">
+<body>
 <form action="/add/success" method="post">
   <p>Insert book data:</p>
   <label>
@@ -17,7 +18,10 @@
     <input type="number" name="isbn">
   </label>
   <br>
+  <br>
   <button type="submit">Add this book</button>
 </form>
+<br>
+<a href="/">Back to main menu</a>
 </body>
 </html>

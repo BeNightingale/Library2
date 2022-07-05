@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8">
     <title>Book search results</title>
+    <link rel="stylesheet" href="/css/operation.css" type="text/css">
   </head>
-  <body style="background-color: lightgray; color: black">
-    <table border="1">
+  <body>
+    <table border="1" style="background-color: white; color: black">
       <caption>Book search results</caption>
       <tr>
         <th>book id</th>

@@ -11,8 +11,9 @@
 <html lang="en">
     <head>
         <title>Form - getting a reader</title>
+        <link rel="stylesheet" href="/css/operation.css" type="text/css">
     </head>
-    <body style="background-color: lightgray; color: black">
+    <body>
     <form action="/reader" method="get">
         <p>Search by reader's id:</p>
         <label>
@@ -28,5 +29,7 @@
         </label>
         <button type="submit">Submit</button>
     </form>
+    <br>
+    <a href="/">Back to main menu</a>
     </body>
 </html>

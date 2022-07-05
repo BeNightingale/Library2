@@ -4,8 +4,9 @@
     <head>
         <meta charset="utf-8">
         <title>Updating book data</title>
+        <link rel="stylesheet" href="/css/operation.css" type="text/css">
     </head>
-    <body style="background-color: lightgray; color: black">
+    <body>
         <form action="/book/update/data" method="post">
             <label>
                 <input type="hidden" name="bookId" value=${book.bookId}>
@@ -22,6 +23,8 @@
             <br>
             <button type="submit">Update this book data</button>
         </form>
+        <br>
+        <a href="/">Back to main menu</a>
     </body>
 </html>
 
