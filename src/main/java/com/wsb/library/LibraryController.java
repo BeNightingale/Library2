@@ -26,6 +26,11 @@ public class LibraryController {
         return bookService.getBook(bookId).orElse(null);
     }
 
+    @GetMapping("/books/title")
+    public List<Book> getBooksByTitle(@RequestParam String title) {
+        return bookService.findBooksByTitle(title);
+    }
+
     @PostMapping("/book")
     public Book addABook(@RequestBody Book book) {
        return bookService.addBook(book.getTitle(),
