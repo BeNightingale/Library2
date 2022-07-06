@@ -72,4 +72,32 @@ public class LibraryController {
     public Reader getAReader(@PathVariable("readerId") int readerId) {
         return readerService.getReader(readerId).orElse(null);
     }
+
+    @PutMapping("/readers/{readerId}")
+    public Reader updateReader(@PathVariable int readerId,
+                               @RequestParam String firstName,
+                               @RequestParam String lastName,
+                               @RequestParam String address,
+                               @RequestParam String telephoneNumber) {
+        return readerService.updateReader(readerId,
+                                firstName,
+                                lastName,
+                                address,
+                                telephoneNumber);
+    }
+
+    @PutMapping("/readers/resignation/{readerId}")
+    public String resign(@PathVariable int readerId) {
+        if (readerService.getReader(readerId).isPresent() &&
+            readerService.getReader(readerId).get().getResignationDate() == null) {
+            readerService.registerResignation(readerId);
+            return "Resignation saved!";
+        }
+        return "That reader resigned earlier!";
+    }
+
+   @GetMapping("/welcome")
+   public String greet() {
+        return "Welcome in my library!";
+   }
 }
